@@ -4,7 +4,7 @@
 // lillith xue, littlemousy et al.
 // Licensed under the GPLv2.  See LICENSE for full details.
 
-string g_sScriptVersion = "8.1.0000";
+string g_sScriptVersion = "8.1";
 integer LINK_CMD_DEBUG=1999;
 //MESSAGE MAP
 //integer CMD_ZERO = 0;
@@ -244,7 +244,6 @@ key findPrimKey(string sDesc)
     }
     return NULL_KEY;
 }
-
 doClearChain(string sChainCMD)
 {
     if (sChainCMD == "all") {
@@ -259,7 +258,6 @@ doClearChain(string sChainCMD)
         list lChains = llParseString2List(sChainCMD,["~"],[]); // Could be a string like "point=target~point=target..." or "point~point..."
         integer i;
         for (i=0;i<llGetListLength(lChains);++i) lRemChains += [llList2String(llParseString2List(llList2String(lChains,i),["="],[]),0)]; // Remove the targets out of the string
-
         for (i=1;i<llGetNumberOfPrims()+1;++i)
         {
             string sDesc = llList2String(llGetLinkPrimitiveParams(i,[PRIM_NAME]),0);
