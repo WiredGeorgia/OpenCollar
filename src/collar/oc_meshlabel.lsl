@@ -527,9 +527,11 @@ state active
             //integer ind = llListFindList(g_lSettingsReqs, [sStr]);
             //if(ind!=-1)g_lSettingsReqs = llDeleteSubList(g_lSettingsReqs, ind,ind);
         
-        } else if (iNum == MENUNAME_REQUEST && sStr == g_sParentMenu)
-            if (!g_bHasError) llMessageLinked(iSender, MENUNAME_RESPONSE, g_sParentMenu + "|" + g_sSubMenu, "");
-            else llOwnerSay(g_sErrorMsg);
+        } else if (iNum == MENUNAME_REQUEST && sStr == g_sParentMenu) {
+            if (!g_bHasError) {
+                llMessageLinked(iSender, MENUNAME_RESPONSE, g_sParentMenu + "|" + g_sSubMenu, "");
+            } else llOwnerSay(g_sErrorMsg);
+        }
         else if (iNum == DIALOG_RESPONSE) {
             integer iMenuIndex = llListFindList(g_lMenuIDs, [kID]);
             if (~iMenuIndex) {
