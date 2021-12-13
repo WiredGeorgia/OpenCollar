@@ -156,12 +156,26 @@ Browser(key kID, integer iAuth, string sPath){
     g_iMenuUser=iAuth;
     g_sPath = sPath;
 
-    if(iAuth == CMD_TRUSTED && !Bool((g_iAccessBitSet&1)))return R();
-    if(iAuth == CMD_EVERYONE && !Bool((g_iAccessBitSet&2)))return R();
-    if(iAuth == CMD_GROUP && !Bool((g_iAccessBitSet&4)))return R();
-    if(iAuth == CMD_WEARER && !Bool((g_iAccessBitSet&8)))return R();
-    if (iAuth<CMD_OWNER || iAuth>CMD_EVERYONE) return R();
-
+    if(iAuth == CMD_TRUSTED && !Bool((g_iAccessBitSet&1))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+    }
+    if(iAuth == CMD_EVERYONE && !Bool((g_iAccessBitSet&2))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+    }
+    if(iAuth == CMD_GROUP && !Bool((g_iAccessBitSet&4))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+    }
+    if(iAuth == CMD_WEARER && !Bool((g_iAccessBitSet&8))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+    }
+    if (iAuth<CMD_OWNER || iAuth>CMD_EVERYONE) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+    }
 
 
     llListenRemove(g_iTmpLstn);
@@ -204,10 +218,23 @@ UserCommand(integer iNum, string sStr, key kID) {
         string sChangevalue = llStringTrim(llGetSubString(sStr, 2, -1), STRING_TRIM);
         //string sText;
 
-        if(iNum == CMD_TRUSTED && !Bool((g_iAccessBitSet&1)))return R();
-        if(iNum == CMD_EVERYONE && !Bool((g_iAccessBitSet&2)))return R();
-        if(iNum == CMD_GROUP && !Bool((g_iAccessBitSet&4)))return R();
-        if(iNum == CMD_WEARER && !Bool((g_iAccessBitSet&8)))return R();
+        if(iNum == CMD_TRUSTED && !Bool((g_iAccessBitSet&1))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+        }
+        if(iNum == CMD_EVERYONE && !Bool((g_iAccessBitSet&2))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+        }
+        if(iNum == CMD_GROUP && !Bool((g_iAccessBitSet&4))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+        }
+        if(iNum == CMD_WEARER && !Bool((g_iAccessBitSet&8))) {
+            llMessageLinked(LINK_SET, NOTIFY, "0%NOACCESS% to browsing #RLV folders", g_kMenuUser);
+            Menu(g_kMenuUser, g_iMenuUser);
+        }
+
         if(g_iFindLstn != -1)llListenRemove(g_iFindLstn);
 
         g_iFindChn = llRound(llFrand(99999999));
@@ -563,3 +590,4 @@ state active
         //llOwnerSay(llDumpList2String([iSender,iNum,sStr,kID],"^"));
     }
 }
+
