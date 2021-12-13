@@ -122,7 +122,7 @@ Particles(key kTarget) {
             PSYS_PART_BLEND_FUNC_DEST,PSYS_PART_BF_ONE_MINUS_SOURCE_ALPHA,
             PSYS_PART_START_SCALE,<0.500000,0.500000,0.000000>,
             PSYS_PART_END_SCALE,<0.231000,0.231000,0.000000>,
-            PSYS_SRC_TEXTURE,"50f9fb96-f1b5-6357-02b4-5585bc4cc55b",
+            PSYS_SRC_TEXTURE, "78830bd0-dc9b-440d-95fc-10897fdfcf84",
             PSYS_SRC_MAX_AGE,0,
             PSYS_PART_MAX_AGE,2.9,
             PSYS_SRC_BURST_RATE,0.1,
@@ -143,9 +143,10 @@ Particles(key kTarget) {
 
 InitiateInstallation() {
     integer iChan = -llAbs((integer)("0x"+llGetSubString((string)llGetOwner(),-7,-1)));
-    llPlaySound("6b4092ce-5e5a-ff2e-42e0-3d4c1a069b2f",1.0);
-    //llPlaySound("3409e593-20ab-fd34-82b3-6ecfdefc0207",1.0); //ao
-    //llPlaySound("95d3f6c5-6a27-da1c-d75c-a57cb29c883b",1.0); //remote hud
+    llPlaySound("56051ff8-a86f-467a-84fd-96e9cfd10c71",1.0);
+    //llPlaySound("9a2c5681-94e4-4fcd-881a-90b0b6bec87c",1.0); //ao
+    //llPlaySound("7c8bd540-3c08-42c4-a5c4-3dfd2349f249",1.0); //remote hud
+
     llWhisper(iChan,(string)llGetOwner()+":.- ... -.-|"+g_sBuildVersion+"|"+(string)llGetKey());
     //llWhisper(iChan,"-.. --- / .- ---"); AO command
     //llWhisper(iChan,"-.. --- / .... ..- -.."); Remote HUD command
