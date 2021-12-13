@@ -349,7 +349,7 @@ state active
     }
     
     
-    listen(integer c,string n,key i,string m){
+    listen(integer c,string n,key id,string m){
         if(c == g_iOutfitScan){
             llListenRemove(g_iOutfitLstn);
             
