@@ -55,25 +55,24 @@ integer CMD_PARTICLE = 20000;
 string UPMENU       = "BACK";
 string PARENTMENU   = "Leash";
 string SUBMENU      = "Configure";
-string L_COLOR      = "color";
-string L_GRAVITY    = "gravity";
-string L_SIZE       = "size";
-string L_FEEL       = "feel";
-string L_GLOW       = "shine";
-string L_STRICT     = "strict";
-string L_TURN       = "turn";
-string L_DEFAULTS   = "RESET";
-string L_CLASSIC_TEX= "Chain"; //texture name when using the classic particle stream
-string L_RIBBON_TEX = "Silk"; //texture name when using the ribbon_mask particle stream
-// Defalut leash particle, can read from defaultsettings:
-// leashParticle=Shine~1~ParticleMode~Ribbon~R_Texture~Silk~C_Texture~Chain~Color~<1,1,1>~Size~<0.07,0.07,1.0>~Gravity~-0.7~C_TextureID~keyID~R_TextureID~keyID
-list g_lDefaultSettings = [L_GLOW,"1",L_TURN,"0",L_STRICT,"0","particlemode","Ribbon","rtexture","Silk","ctexture","Chain",L_COLOR,"<1.0,1.0,1.0>",L_SIZE,"<0.04,0.04,1.0>",L_GRAVITY,"-1.0"];
+string L_COLOR = "Color";
+string L_GRAVITY = "Gravity";
+string L_SIZE = "Size";
+string L_FEEL = "Feel";
+string L_GLOW = "Shine";
+string L_STRICT = "Strict";
+string L_TURN = "Turn";
+string L_DEFAULTS = "RESET";
+string L_CLASSIC_TEX = "Chain";
+string L_RIBBON_TEX = "Silk";
+list g_lDefaultSettings = ["Shine","1","Turn","0","Strict","0","ParticleMode","Classic","R_Texture","Silk","C_Texture","Chain","Color","<1.0,1.0,1.0>","Size","<0.04,0.04,1.0>","Gravity","-1.0"];
 
 string Uncheckbox(string Button){
     return llGetSubString(Button, llStringLength(llList2String(g_lCheckboxes, 0))+1, -1);
 }
 
-list g_lSettings=g_lDefaultSettings;
+//list g_lSettings=g_lDefaultSettings;
+list g_lSettings = ["Shine","1","Turn","0","Strict","0","ParticleMode","Ribbon","R_Texture","Silk","C_Texture","Chain","Color","<1.0,1.0,1.0>","Size","<0.04,0.04,1.0>","Gravity","-1.0"];
 
 list g_lMenuIDs;
 integer g_iMenuStride = 3;
@@ -346,11 +345,12 @@ GetSettings(integer iStartParticles) {
 SetTexture(string sIn, key kIn) {
     g_sParticleTexture = sIn;
     g_sLeashParticleTexture=(string)NULL_KEY;
-    if (sIn=="Silk") g_sLeashParticleTexture="cdb7025a-9283-17d9-8d20-cee010f36e90";
-    else if (sIn=="Chain") g_sLeashParticleTexture="4cde01ac-4279-2742-71e1-47ff81cc3529";
-    else if (sIn=="Leather") g_sLeashParticleTexture="8f4c3616-46a4-1ed6-37dc-9705b754b7f1";
-    else if (sIn=="Rope") g_sLeashParticleTexture="9a342cda-d62a-ae1f-fc32-a77a24a85d73";
-    else if (sIn=="totallytransparent") g_sLeashParticleTexture=TEXTURE_TRANSPARENT;
+    if (sIn=="Silk") g_sParticleTextureID="d403a4ca-56f3-48e3-9ce5-6240415a4ebf";
+    else if (sIn=="Chain") g_sParticleTextureID="796ef797-1726-4409-a70f-cd64304ada22";
+    else if (sIn=="Leather") g_sParticleTextureID="c0f5e21a-af58-4ee3-a0d0-1fbb7f28c47f";
+    else if (sIn=="Rope") g_sParticleTextureID="36b304cc-6209-4f47-9e4a-a68901e98e6e";
+    else if (sIn=="totallytransparent") g_sParticleTextureID=TEXTURE_TRANSPARENT;
+
     else {
         if (llToLower(g_sParticleTexture) == "noleash") g_sLeashParticleMode = "noParticle";
         //Debug("particleTexture= " + sIn);
