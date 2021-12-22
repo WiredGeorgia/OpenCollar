@@ -153,7 +153,7 @@ list GetPoseList(integer iType)
     
     return lTmp;
 }
-list GetCompletePoseList((integer iType)
+list GetCompletePoseList(integer iType)
 {
     // -1 = as it exists in inventory
     // 0 = lower case
