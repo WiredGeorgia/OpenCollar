@@ -153,6 +153,23 @@ list GetPoseList(integer iType)
     
     return lTmp;
 }
+list GetCompletePoseList((integer iType)
+{
+    // -1 = as it exists in inventory
+    // 0 = lower case
+    
+    list lTmp;
+    integer i=0;
+    integer end = llGetInventoryNumber(INVENTORY_ANIMATION);
+    for(i=0;i<end;i++){
+        
+        string name = llGetInventoryName(INVENTORY_ANIMATION, i);
+        if(iType == -1)lTmp += [name];
+        else lTmp += [llToLower(name)];
+    }
+    
+    return lTmp;
+}
 
 UserCommand(integer iNum, string sStr, key kID) {
     string ssStr = llToLower(sStr);
@@ -189,7 +206,7 @@ UserCommand(integer iNum, string sStr, key kID) {
             // this is a pose
             if (g_sPose != "")StopAnimation(g_sPose);
             // get actual pose name as it exists in inventory
-            integer index = llListFindList(GetPoseList(0), [llToLower(sChangetype)]);
+            integer index = llListFindList(GetCompletePoseList(0), [llToLower(sChangetype)]);
             g_sPose = llGetInventoryName(INVENTORY_ANIMATION,index);
             StartAnimation(g_sPose);
             llMessageLinked(LINK_SET, LM_SETTING_SAVE, "anim_pose="+llList2String(g_lCurrentAnimations, 0),"");

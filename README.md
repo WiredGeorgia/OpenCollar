@@ -1,4 +1,4 @@
-### Welcome to OpenCollar
+### Welcome to OpenCollar (Opensim / Osgrid mods)
 
 OpenCollar is a set of LSL scripts and related content (such as animations,
 sounds, textures, graphics and 3D models) created for SecondLife.  It has many
