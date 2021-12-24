@@ -92,8 +92,8 @@ integer DIALOG_TIMEOUT = -9002;
 string UPMENU = "BACK";
 //string ALL = "ALL";
 
-string g_sLockSound="dec9fb53-0fef-29ae-a21d-b3047525d312";
-string g_sUnlockSound="82fa6d06-b494-f97c-2908-84009380c8d1";
+string g_sLockSound="6995afef-8fe5-4b21-8141-506b6f065736";
+string g_sUnlockSound="8893fc6c-05ff-4322-a00e-b320880ded98";
 
 integer g_iListenPublic=TRUE;
 
@@ -950,3 +950,4 @@ state active
         }
     }
 }
+
