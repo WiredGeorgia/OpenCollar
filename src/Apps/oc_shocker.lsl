@@ -52,7 +52,7 @@ string g_sSetSound = "Set Sound";
 
 string g_sDefaultAnim = "~shock";
 //string g_sDefaultSound = "011ef7f4-40e8-28fe-4ea5-f2fda0883707";
-string g_sDefaultSound = "4546cdc8-8682-6763-7d52-2c1e67e8257d";
+string g_sDefaultSound = "1303df83-5621-44a1-abf3-238a7360ebc8";
 string g_sNoSound = "silent" ;
 
 string g_sShockAnim ;
@@ -289,3 +289,4 @@ default {
         Stop();
     }
 }
+
