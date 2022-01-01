@@ -284,7 +284,7 @@ ClearAllParticles(){
 
 SetParticles(integer link, key kID,key kTexture, float fMaxAge, float fGravity){
 
-    if(kTexture=="" || kTexture=="def")kTexture="4cde01ac-4279-2742-71e1-47ff81cc3529";
+    if(kTexture=="" || kTexture=="def")kTexture="796ef797-1726-4409-a70f-cd64304ada22";
     if(fMaxAge==0)fMaxAge=7.3;
     if(llRound(fGravity) == -1) fGravity = -0.01;
     llLinkParticleSystem(link, [
