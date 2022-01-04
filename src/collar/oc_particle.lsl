@@ -102,7 +102,7 @@ string g_sSettingToken = "particle_";
 
 string g_sParticleTexture = "Silk";
 string g_sParticleTextureID; //we need the UUID for llLinkParticleSystem
-string g_sLeashParticleTexture;
+string g_sLeashParticleTexture = "796ef797-1726-4409-a70f-cd64304ada22";
 //string g_sOccParticleTexture = "4cde01ac-4279-2742-71e1-47ff81cc3529";
 string g_sLeashParticleMode;
 vector g_vLeashColor = <1.00000, 1.00000, 1.00000>;
