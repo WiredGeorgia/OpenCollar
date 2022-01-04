@@ -18,7 +18,7 @@ https://github.com/OpenCollarTeam/OpenCollar
 
 // this texture is a spritemap with all buttons on it, for faster texture
 // loading than having separate textures for each button.
-string BTN_TEXTURE = "da46036f-7f4d-59e5-3fcf-a43d692e3ea7";
+string BTN_TEXTURE = "a786db67-5a76-4f0b-836f-c72d457dc50a";
 
 // There are 3 columns of buttons and 8 rows of buttons in the sprite map.
 integer BTN_XS = 3;
